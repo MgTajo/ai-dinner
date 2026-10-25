@@ -1,0 +1,17 @@
+node_modules/
+.expo/
+dist/
+web-build/
+*.tsbuildinfo
+
+# Native folders made by `npx expo prebuild` / `expo run:android`
+/android
+/ios
+
+# Secrets: never commit these.
+.env
+.env.local
+.env.*.local
+*.keypair.json
+*.jks
+*.keystore
