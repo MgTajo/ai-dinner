@@ -12,7 +12,7 @@ export const modules: StudioModule[] = [
   {
     "id": "gemini",
     "name": "Gemini chat",
-    "href": "/chat",
+    "href": "/dev/chat",
     "summary": "A chat screen that asks Google Gemini through your companion server. The key never ships in the app."
   },
   {
@@ -23,7 +23,7 @@ export const modules: StudioModule[] = [
   {
     "id": "race",
     "name": "Race readiness",
-    "href": "/race",
+    "href": "/dev/race",
     "summary": "Your companion server speaks the race protocol (ASRP/1) so the AI Race verifier can test it. You write the AI logic for each task type."
   },
   {
@@ -34,7 +34,7 @@ export const modules: StudioModule[] = [
   {
     "id": "paidapi",
     "name": "Premium data",
-    "href": "/premium",
+    "href": "/dev/premium",
     "summary": "The companion server sells GET /premium-data for devnet USDC; the Premium screen shows the price and lets the companion's agent buy it within its spending limits."
   },
   {
@@ -45,7 +45,7 @@ export const modules: StudioModule[] = [
   {
     "id": "wallet",
     "name": "Pay with your wallet",
-    "href": "/wallet",
+    "href": "/dev/wallet",
     "summary": "People connect a Solana wallet app on their phone (Phantom, Solflare, Backpack, …) through Solana Mobile Wallet Adapter and pay the companion's paid API from it, approving each payment in the wallet. Devnet only. Needs a development build, not Expo Go."
   }
 ];

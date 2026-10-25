@@ -25,6 +25,11 @@ function tryIt(id: string, origin: string): [string, string][] {
       return [["The agent's budget so far", `curl ${origin}/api/buy`]];
     case "paysh":
       return [["Pay it with the Pay.sh CLI (brew install pay)", "npm run paysh"]];
+    case "food":
+      return [
+        ["What the food agent can do here", `curl ${origin}/api/food/status`],
+        ["Turn a message into a food intent", `curl -X POST ${origin}/api/food/understand -H "Content-Type: application/json" -d '{"message":"A healthy bowl at 18:30"}'`],
+      ];
     default:
       return [];
   }

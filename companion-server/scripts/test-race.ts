@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { handleHealth, handleTask } from "../src/race/adapter.js";
-import { handlers } from "../src/race/handlers.js";
+import { handlers, parsePayment } from "../src/race/handlers.js";
 import { TaskError } from "../src/race/protocol.js";
 import { createMemory } from "../src/race/memory.js";
 
@@ -55,10 +55,20 @@ test("TaskError becomes the matching protocol error", async () => {
   }
 });
 
-test("unbuilt task types say so instead of guessing", async () => {
-  const r = await handleTask(auth, request({ type: "converse", input: "hi", sessionId: "s" }), env);
-  assert.equal(r.status, 500);
-  assert.match((r.body.error as { message: string }).message, /doesn't handle "converse" tasks yet/);
+test("malformed tasks are rejected with invalid_input before any model call", async () => {
+  const noSession = await handleTask(auth, request({ type: "converse", input: "hi" }), env);
+  assert.equal(noSession.status, 400);
+  const noTools = await handleTask(auth, request({ type: "use_tools", input: "look it up", tools: [] }), env);
+  assert.equal(noTools.status, 400);
+  const noSchema = await handleTask(auth, request({ type: "extract", input: "Ada, 36" }), env);
+  assert.equal(noSchema.status, 400);
+});
+
+test("payment instructions are parsed exactly", () => {
+  const to = "HKTsQNNRaeGvTag4za38v1fUpz5z6CbHqweD8jSzubRh";
+  assert.deepEqual(parsePayment(`Pay 0.01 devnet USDC to ${to} with the memo asrp-7f3a9c.`), { to, amountUsdc: 0.01, memo: "asrp-7f3a9c" });
+  assert.deepEqual(parsePayment(`Pay 0.25 devnet USDC to ${to} with the memo "race 42"`), { to, amountUsdc: 0.25, memo: "race 42" });
+  assert.equal(parsePayment("Check inventory, then order three widgets"), null);
 });
 
 test("memory keeps sessions apart (in-process fallback)", async () => {

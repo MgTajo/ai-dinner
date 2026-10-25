@@ -10,6 +10,12 @@ export interface StudioModule {
 
 export const modules: StudioModule[] = [
   {
+    "id": "food",
+    "name": "Sous food agent (GET /api/food/status)",
+    "href": "/api/food/status",
+    "summary": "Backs the Sous app: understands food requests with the model (Gemini, or a local Ollama model without a key) and pays restaurants in devnet USDC for confirmed orders, within spending limits."
+  },
+  {
     "id": "gemini",
     "name": "Gemini chat (POST /api/chat)",
     "href": "/api/chat",

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Text } from "react-native";
-import { Button, KeyValue, Module, Muted, Notice, PageHeader, Screen, StripStatus } from "../components/Screen";
-import { companionJson } from "../lib/companion";
+import { Button, KeyValue, Module, Muted, Notice, PageHeader, Screen, StripStatus } from "../../components/Screen";
+import { companionJson } from "../../lib/companion";
 
 interface Readiness {
   verifierToken: string;

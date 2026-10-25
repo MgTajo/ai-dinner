@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Superteam Agent App",
+    "name": "Sous",
     "slug": "superteam-agent-app",
     "version": "0.1.0",
     "scheme": "superteamagentapp",
     "orientation": "portrait",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "light",
     "platforms": [
       "android",
       "ios",
@@ -19,7 +19,12 @@
     ],
     "web": {
       "bundler": "metro",
-      "output": "single"
+      "output": "single",
+      "name": "Sous",
+      "shortName": "Sous",
+      "description": "Sous, your food agent: finds, orders and pays for meals that fit your day.",
+      "themeColor": "#F5F3EE",
+      "backgroundColor": "#F5F3EE"
     }
   }
 }

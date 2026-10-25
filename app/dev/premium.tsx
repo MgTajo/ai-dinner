@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
-import { Button, ExplorerLink, KeyValue, Meter, Module, Notice, Output, PageHeader, Screen, StripStatus, colors } from "../components/Screen";
-import { CompanionError } from "../lib/companion";
-import type { PriceCheck } from "../lib/payments/client";
-import { buyPremiumData, getSpending, peekPremiumData, type PurchaseResult, type SpendingSnapshot } from "../lib/paidapi/client";
+import { Button, ExplorerLink, KeyValue, Meter, Module, Notice, Output, PageHeader, Screen, StripStatus, colors } from "../../components/Screen";
+import { CompanionError } from "../../lib/companion";
+import type { PriceCheck } from "../../lib/payments/client";
+import { buyPremiumData, getSpending, peekPremiumData, type PurchaseResult, type SpendingSnapshot } from "../../lib/paidapi/client";
 
 export default function Premium() {
   const [spending, setSpending] = useState<SpendingSnapshot | null>(null);

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Linking, Text, TextInput } from "react-native";
-import { Button, Module, Notice, PageHeader, Screen, StripStatus, colors, mono } from "../components/Screen";
-import { askGemini } from "../lib/ai/client";
+import { Button, Module, Notice, PageHeader, Screen, StripStatus, colors, mono } from "../../components/Screen";
+import { askGemini } from "../../lib/ai/client";
 
 export default function Chat() {
   const [prompt, setPrompt] = useState("Explain what an API is in two sentences.");

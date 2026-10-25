@@ -1,9 +1,9 @@
 import type { Address } from "@solana/kit";
 import { useState } from "react";
 import { Text } from "react-native";
-import { Button, ExplorerLink, KeyValue, Module, Notice, Output, PageHeader, Screen, StripStatus, colors } from "../components/Screen";
-import { connectWallet, disconnectWallet } from "../lib/wallet/mobileWallet";
-import { MAX_PAYMENT, payWithWallet, type WalletPurchase } from "../lib/wallet/pay";
+import { Button, ExplorerLink, KeyValue, Module, Notice, Output, PageHeader, Screen, StripStatus, colors } from "../../components/Screen";
+import { connectWallet, disconnectWallet } from "../../lib/wallet/mobileWallet";
+import { MAX_PAYMENT, payWithWallet, type WalletPurchase } from "../../lib/wallet/pay";
 
 export default function Wallet() {
   const [owner, setOwner] = useState<Address | null>(null);

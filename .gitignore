@@ -15,3 +15,7 @@ web-build/
 *.keypair.json
 *.jks
 *.keystore
+
+# Concept documents kept locally
+*.pdf
+.DS_Store
